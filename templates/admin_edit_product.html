@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_edit.css') }}">
+    <title>Editar Cupcake</title>
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .submit-button, input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Cupcake</h1>
+
+        <!-- Formulário de edição -->
+        <form action="/atualizar_cupcake/{{ cupcake[0] }}" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="{{ cupcake[1] }}"><br><br>
+
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao">{{ cupcake[2] }}</textarea><br><br>
+
+            <label for="preco">Preço:</label>
+            <input type="text" id="preco" name="preco" value="{{ cupcake[3] }}"><br><br>
+
+            <label for="disponivel">Disponível:</label>
+            <input type="checkbox" id="disponivel" name="disponivel" {% if cupcake[4] %}checked{% endif %}><br><br>
+
+            <!-- Botões lado a lado -->
+            <div class="button-container">
+                <!-- Botão de Voltar -->
+                <button type="button" onclick="window.history.back();" class="submit-button">Voltar</button>
+
+                <!-- Botão de Atualizar -->
+                <input type="submit" value="Atualizar">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

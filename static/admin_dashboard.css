@@ -1,0 +1,203 @@
+/* Reset de estilos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis de cores */
+:root {
+    --primary-color: #27ae60;
+    --secondary-color: #3498db;
+    --text-color: #fff;
+    --hover-color: #ff6b00;
+    --error-color: #f44336;
+    --success-color: #4CAF50;
+    --background-gradient: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+}
+
+/* Estilo base */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--background-gradient);
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    transition: background 0.5s ease;
+}
+
+/* Animação do fundo */
+@keyframes animateBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Estilo do conteúdo */
+.content {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Animação de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botão de logout */
+.logout-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    overflow: hidden;
+}
+
+.logout-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+}
+
+.logout-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.logout-button:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.logout-button:focus {
+    outline: none;
+}
+
+/* Estilo do cabeçalho */
+.admin-header {
+    background: var(--background-gradient);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Efeito de brilho no cabeçalho */
+.admin-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Estilo do menu administrativo */
+.admin-menu {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.admin-menu h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--hover-color);
+}
+
+.admin-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-menu ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 5px;
+    display: block;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.admin-menu ul li a:hover {
+    color: var(--hover-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mensagens */
+.mensagem {
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mensagem-sucesso {
+    background-color: var(--success-color);
+    color: var(--text-color);
+}
+
+.mensagem-erro {
+    background-color: var(--error-color);
+    color: var(--text-color);
+}

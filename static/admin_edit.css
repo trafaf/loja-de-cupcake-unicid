@@ -1,0 +1,115 @@
+/* Reset de estilos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #3498db, #2ecc71); /* Gradiente de fundo atualizado */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.container:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #3498db; /* Cor do título */
+}
+
+.product {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.product:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #2ecc71; /* Cor da borda dos inputs */
+    border-radius: 8px;
+    font-size: 18px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #27ae60; /* Cor da borda ao focar */
+}
+
+input[type="checkbox"] {
+    margin-bottom: 30px;
+}
+
+input[type="submit"] {
+    padding: 14px 24px;
+    background-color: #2ecc71; /* Cor do botão de submit */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #27ae60; /* Cor do botão ao passar o mouse */
+}
+
+a {
+    color: #ff5f6d; /* Cor dos links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #3498db; /* Cor dos links ao passar o mouse */
+}
+
+::placeholder {
+    color: #3498db; /* Cor do placeholder */
+}
+
+/* Estilizando botões */
+button,
+input[type="submit"] {
+    padding: 12px 24px;
+    background-color: #27ae60; /* Cor do botão */
+    color: #fff;
+    border: none;
+    border-radius: 25px; /* Bordas arredondadas */
+    cursor: pointer;
+    font-size: 16px;
+}
